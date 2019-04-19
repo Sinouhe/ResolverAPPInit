@@ -1,0 +1,11 @@
+.toastAlert {
+    opacity : 0;
+    position: absolute;
+    left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    min-width: 75%;
+}

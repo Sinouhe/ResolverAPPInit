@@ -1,0 +1,15 @@
+<div [ngSwitch]="href">
+  <div *ngSwitchCase="'/account'"><div *ngIf="!isAuthenticated; then notConnected else connected"></div></div>
+  <div *ngSwitchCase="'/account/creationCompte'"><app-account-register [isAuthenticated]=isAuthenticated></app-account-register></div>
+</div>
+
+
+<ng-template #notConnected>
+  <app-login></app-login>
+</ng-template>
+<ng-template #connected>
+  <app-profil></app-profil>
+</ng-template>
+
+
+  

@@ -1,0 +1,55 @@
+<div *ngIf="_oUser">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          données du profil.
+        </mat-panel-title>
+          <mat-panel-description>
+            
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+      <form [formGroup]="_oFormProfil" (ngSubmit)="modifieProfil(_oFormProfil)">
+      <div class="row">
+        <div class="form-group col-lg-2" style="padding-top: 15px;">
+            Nom : 
+        </div>
+        <div class="form-group col-lg-3">
+          <mat-form-field>
+            <input  matInput 
+                    [placeholder]="_oUser._sNom" 
+                    (change)="setSaveProfil(_oFormProfil.value)"
+                    name="nom" 
+                    formControlName="nom"
+                    >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-2" style="padding-top: 15px;">
+            Prénom : 
+        </div>
+        <div class="form-group col-lg-3">
+          <mat-form-field>
+            <input  matInput 
+                    [placeholder]="_oUser._sPrenom" 
+                    (change)="setSaveProfil(_oFormProfil.value)"
+                    name="prenom" 
+                    formControlName="prenom"
+                    >
+          </mat-form-field>
+        </div>
+        <div class="form-group offset-lg-4 col-lg-3">
+          <button   type="submit" 
+                    mat-button 
+                    class="btnSaveProfilChange"
+                    matTooltip="Sauvegarder les modifications"
+                    >
+            save change
+          </button>
+        </div>
+      </div>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+  </div>
